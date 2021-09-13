@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "70565565923",
+    "project_id": "nifixie-gari",
+    "storage_bucket": "nifixie-gari.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:70565565923:android:36a5df4f52ba9b8c73bcd6",
+        "android_client_info": {
+          "package_name": "com.leencecodes.nifixiegari"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "70565565923-8r9nh9p0ek76qhnittp3ce8h56l70i6j.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDRV1XMJCh_BCaDVR9w1Z22cKP3bHVFMv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "70565565923-8r9nh9p0ek76qhnittp3ce8h56l70i6j.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
