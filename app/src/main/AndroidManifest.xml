@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NifixieGari">
         <activity
+            android:name=".auth.RegisterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="true" />
+        <activity
+            android:name=".auth.AuthActivity"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
