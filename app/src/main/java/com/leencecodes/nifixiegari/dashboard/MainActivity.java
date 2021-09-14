@@ -1,8 +1,10 @@
-package com.leencecodes.nifixiegari;
+package com.leencecodes.nifixiegari.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.leencecodes.nifixiegari.R;
 
 public class MainActivity extends AppCompatActivity {
 
