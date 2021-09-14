@@ -13,8 +13,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.leencecodes.nifixiegari.MainActivity;
-import com.leencecodes.nifixiegari.R;
+import com.leencecodes.nifixiegari.dashboard.MainActivity;
 import com.leencecodes.nifixiegari.databinding.ActivityLoginBinding;
 
 public class LoginActivity extends AppCompatActivity {
@@ -30,9 +29,6 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
-
-        //signUp.setOnClickListener(v ->
-        //Navigation.findNavController(v).navigate(R.id.action_loginFragment_to_registerFragment));
 
         binding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override

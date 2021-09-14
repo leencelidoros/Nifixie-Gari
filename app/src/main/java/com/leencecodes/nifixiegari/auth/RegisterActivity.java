@@ -16,7 +16,6 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.leencecodes.nifixiegari.R;
 import com.leencecodes.nifixiegari.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -48,7 +47,7 @@ public class RegisterActivity extends AppCompatActivity {
                     return;
                 } else if (binding.signUpPasswordEditText.length() < 6) {
                     binding.signUpPasswordEditText.setError("Password should be 6 characters or more!");
-                } else if (!isvalidemail(binding.signUpEmailEditText.getText().toString())) {
+                } else if (!isValidMail(binding.signUpEmailEditText.getText().toString())) {
                     binding.signUpEmailEditText.setError("Invalid Email!");
                 } else {
                     binding.signUpProgressBar.setVisibility(View.VISIBLE);
@@ -94,7 +93,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    private boolean isvalidemail(CharSequence target) {
+    private boolean isValidMail(CharSequence target) {
         return (!TextUtils.isEmpty(target) && Patterns.EMAIL_ADDRESS.matcher(target).matches());
     }
 }
