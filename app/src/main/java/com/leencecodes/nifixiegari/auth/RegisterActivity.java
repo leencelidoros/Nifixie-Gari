@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -16,6 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 import com.leencecodes.nifixiegari.databinding.ActivityRegisterBinding;
 
 public class RegisterActivity extends AppCompatActivity {
@@ -58,17 +60,31 @@ public class RegisterActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             firebaseUser = firebaseAuth.getCurrentUser();
+
+                            UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+                                    .setDisplayName(binding.userFullName.getText().toString())
+                                    .setPhotoUri(Uri.parse("https://example.com/jane-q-user/profile.jpg"))
+                                    .build();
+
                             assert firebaseUser != null;
-                            firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                            firebaseUser.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
-                                public void onSuccess(Void aVoid) {
+                                public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(RegisterActivity.this, "Verification Email Sent To Your Email.", Toast.LENGTH_SHORT).show();
-                                    } else {
-                                        Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                        firebaseUser.sendEmailVerification().addOnSuccessListener(new OnSuccessListener<Void>() {
+                                            @Override
+                                            public void onSuccess(Void aVoid) {
+                                                if (task.isSuccessful()) {
+                                                    Toast.makeText(RegisterActivity.this, "Verification Email Sent To Your Email.", Toast.LENGTH_SHORT).show();
+                                                } else {
+                                                    Toast.makeText(RegisterActivity.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                                }
+                                            }
+                                        });
                                     }
                                 }
                             });
+
                             Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
                             startActivity(intent);
                             finish();

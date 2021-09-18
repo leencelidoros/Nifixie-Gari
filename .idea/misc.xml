@@ -3,20 +3,29 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/edit_text_shadow.xml" value="0.21296296296296297" />
         <entry key="app/src/main/res/drawable/edittext_background.xml" value="0.20462962962962963" />
+        <entry key="app/src/main/res/drawable/message_blue.xml" value="0.21296296296296297" />
+        <entry key="app/src/main/res/drawable/message_gray.xml" value="0.21296296296296297" />
+        <entry key="app/src/main/res/drawable/outline_send_24.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.254416961130742" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/activity_splash.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.25" />
         <entry key="app/src/main/res/layout/garages_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/header.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/image_message.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/mechanics_row.xml" value="0.13055555555555556" />
+        <entry key="app/src/main/res/layout/message_row.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/single_mechanic_row.xml" value="0.13489583333333333" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
         <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/logout_menu.xml" value="0.26197916666666665" />
       </map>
     </option>
   </component>

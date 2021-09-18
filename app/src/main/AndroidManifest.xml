@@ -10,14 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NifixieGari">
         <activity
+            android:name=".auth.RegisterActivity"
+            android:exported="true" android:theme="@style/Theme.Splash"/>
+        <activity
             android:name=".dashboard.MainActivity"
             android:exported="true" />
         <activity
             android:name=".auth.LoginActivity"
-            android:exported="true" />
+            android:exported="true" android:theme="@style/Theme.Splash"/>
         <activity
-            android:name=".auth.RegisterActivity"
-            android:exported="true">
+            android:name=".SplashActivity"
+            android:exported="true"
+            android:theme="@style/Theme.Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
