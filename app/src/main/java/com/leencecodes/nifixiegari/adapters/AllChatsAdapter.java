@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
@@ -83,7 +84,7 @@ public class AllChatsAdapter extends FirebaseRecyclerAdapter<Chat, AllChatsAdapt
                 holder.setName(userName);
 
 
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
+                holder.card.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
                         Mechanic mechanic = new Mechanic(userName,"","",list_user_id);
@@ -111,12 +112,14 @@ public class AllChatsAdapter extends FirebaseRecyclerAdapter<Chat, AllChatsAdapt
         TextView message;
         TextView name;
         TextView time;
+        CardView card;
 
         public MessagesViewHolder(@NonNull View itemView) {
             super(itemView);
             message = itemView.findViewById(R.id.textViewLastMessage);
             name = itemView.findViewById(R.id.textViewSendeeName);
             time = itemView.findViewById(R.id.textViewLastMessageTime);
+            card = itemView.findViewById(R.id.card);
         }
 
         public void setTime(String tme) {

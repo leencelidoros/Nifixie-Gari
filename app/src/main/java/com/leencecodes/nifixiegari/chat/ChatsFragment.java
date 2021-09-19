@@ -1,4 +1,4 @@
-package com.leencecodes.nifixiegari.dashboard;
+package com.leencecodes.nifixiegari.chat;
 
 import android.os.Bundle;
 

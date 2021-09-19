@@ -1,7 +1,9 @@
-package com.leencecodes.nifixiegari.adapters;
+package com.leencecodes.nifixiegari.observers;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.leencecodes.nifixiegari.adapters.ChatsRecyclerAdapter;
 
 public class ScrollToBottomObserver extends RecyclerView.AdapterDataObserver {
 

@@ -12,7 +12,7 @@
         tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/chatRoomFragment"
-        android:name="com.leencecodes.nifixiegari.dashboard.ChatRoomFragment"
+        android:name="com.leencecodes.nifixiegari.chat.ChatRoomFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat_room" >
         <argument
@@ -35,7 +35,7 @@
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/chatsFragment"
-        android:name="com.leencecodes.nifixiegari.dashboard.ChatsFragment"
+        android:name="com.leencecodes.nifixiegari.chat.ChatsFragment"
         android:label="fragment_chats"
         tools:layout="@layout/fragment_chats" >
         <action

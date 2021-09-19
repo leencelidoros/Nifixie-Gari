@@ -1,4 +1,4 @@
-package com.leencecodes.nifixiegari.adapters;
+package com.leencecodes.nifixiegari.observers;
 
 import android.text.Editable;
 import android.text.TextWatcher;

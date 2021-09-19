@@ -1,6 +1,4 @@
-package com.leencecodes.nifixiegari.dashboard;
-
-import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+package com.leencecodes.nifixiegari.chat;
 
 import android.os.Bundle;
 
@@ -27,9 +25,9 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
-import com.leencecodes.nifixiegari.adapters.ButtonObserver;
+import com.leencecodes.nifixiegari.observers.ButtonObserver;
 import com.leencecodes.nifixiegari.adapters.ChatsRecyclerAdapter;
-import com.leencecodes.nifixiegari.adapters.ScrollToBottomObserver;
+import com.leencecodes.nifixiegari.observers.ScrollToBottomObserver;
 import com.leencecodes.nifixiegari.databinding.FragmentChatRoomBinding;
 import com.leencecodes.nifixiegari.models.ChatMessage;
 import com.leencecodes.nifixiegari.models.Mechanic;

@@ -10,7 +10,7 @@
         <entry key="app/src/main/res/drawable/outline_send_24.xml" value="0.20833333333333334" />
         <entry key="app/src/main/res/drawable/spinner_background.xml" value="0.21666666666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.254416961130742" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/chat_row.xml" value="0.25" />
