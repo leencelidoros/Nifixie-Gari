@@ -1,15 +1,21 @@
 package com.leencecodes.nifixiegari.dashboard;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -18,6 +24,7 @@ import com.google.firebase.database.ValueEventListener;
 import com.leencecodes.nifixiegari.R;
 import com.leencecodes.nifixiegari.adapters.FGaragesAdapter;
 import com.leencecodes.nifixiegari.adapters.FMechanicsAdapter;
+import com.leencecodes.nifixiegari.auth.LoginActivity;
 import com.leencecodes.nifixiegari.databinding.FragmentHomeBinding;
 import com.leencecodes.nifixiegari.models.Garage;
 import com.leencecodes.nifixiegari.models.Mechanic;
@@ -42,12 +49,31 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
 
+        setHasOptionsMenu(true);
+
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         getFeaturedGarages();
         getFeaturedMechanics();
 
         return view;
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.logout_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (R.id.logout == item.getItemId()) {
+            FirebaseAuth.getInstance().signOut();
+            startActivity(new Intent(getActivity(), LoginActivity.class));
+            requireActivity().finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     private void getFeaturedGarages() {
