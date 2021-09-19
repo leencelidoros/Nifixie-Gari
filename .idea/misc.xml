@@ -13,7 +13,10 @@
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.254416961130742" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/chat_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1685185185185185" />
+        <entry key="app/src/main/res/layout/fragment_chat_room.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.33" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.25" />

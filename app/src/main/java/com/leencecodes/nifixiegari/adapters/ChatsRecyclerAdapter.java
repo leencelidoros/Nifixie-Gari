@@ -18,6 +18,8 @@ import com.leencecodes.nifixiegari.models.ChatMessage;
 
 public class ChatsRecyclerAdapter extends FirebaseRecyclerAdapter<ChatMessage, ChatsRecyclerAdapter.MessagesViewHolder> {
 
+    private static final String TAG = "ChatsRecyler";
+
     String currentUserName;
 
     public ChatsRecyclerAdapter(@NonNull FirebaseRecyclerOptions<ChatMessage> options, String currentUserName) {
@@ -28,6 +30,7 @@ public class ChatsRecyclerAdapter extends FirebaseRecyclerAdapter<ChatMessage, C
     @Override
     protected void onBindViewHolder(@NonNull MessagesViewHolder holder, int position, @NonNull ChatMessage model) {
         ChatMessage message = model;
+        Log.d(TAG, "onBindViewHolder: chats"+message.getChatMessage());
         holder.bind(message);
     }
 
@@ -40,19 +43,27 @@ public class ChatsRecyclerAdapter extends FirebaseRecyclerAdapter<ChatMessage, C
 
     public class MessagesViewHolder extends RecyclerView.ViewHolder {
         TextView message;
+        TextView name;
+        TextView time;
 
         public MessagesViewHolder(@NonNull View itemView) {
             super(itemView);
             message = itemView.findViewById(R.id.messageTextView);
+            name = itemView.findViewById(R.id.messengerTextView);
+            time = itemView.findViewById(R.id.textViewTimeDate);
         }
 
         public void bind(ChatMessage messge) {
             message.setText(messge.getChatMessage());
             setTextColor(messge.getChatSender(), message);
+            name.setText(messge.getChatSender());
+            time.setText(messge.getChatTime());
         }
 
         private void setTextColor(String userName, TextView textView) {
-            if (currentUserName == userName && userName != null) {
+
+            Log.d(TAG, "setTextColor: CurrentUserName"+currentUserName+ " Username"+userName);
+            if (currentUserName.equals(userName)) {
                 textView.setBackgroundResource(R.drawable.message_blue);
                 textView.setTextColor(Color.WHITE);
             } else {

@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -25,11 +26,14 @@ import java.util.ArrayList;
 
 public class SearchFragment extends Fragment {
 
+    private static final String TAG = "SearchFragment";
+
     private FragmentSearchBinding binding;
     private DatabaseReference databaseReference;
 
     private SearchMechanicsAdapter mechanicsAdapter = new SearchMechanicsAdapter(Mechanic.itemCallback);
     private ArrayList<Mechanic> mechanicArrayList = new ArrayList<>();
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -72,12 +76,13 @@ public class SearchFragment extends Fragment {
     }
 
     private void getMechanics() {
-        databaseReference.child("featured_mechanics").addValueEventListener(new ValueEventListener() {
+        databaseReference.child("mechanics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot i : snapshot.getChildren()) {
                         Mechanic mechanic = i.getValue(Mechanic.class);
+                        Log.d(TAG, "onDataChange: getRefKey" + mechanic.getUniqueUUID());
                         mechanicArrayList.add(mechanic);
                     }
                     mechanicsAdapter.submitList(mechanicArrayList);

@@ -27,7 +27,7 @@
         android:textAppearance="?android:attr/textAppearanceSmall"
         app:layout_constraintStart_toStartOf="@id/messageTextView"
         app:layout_constraintTop_toBottomOf="@id/messageTextView"
-        tools:text="FirstName LastName" />
+        tools:text="Joel Kanyi" />
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/messengerImageView"

@@ -11,18 +11,35 @@
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
     <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.leencecodes.nifixiegari.dashboard.ChatFragment"
+        android:id="@+id/chatRoomFragment"
+        android:name="com.leencecodes.nifixiegari.dashboard.ChatRoomFragment"
         android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
+        tools:layout="@layout/fragment_chat_room" >
+        <argument
+            android:name="mechanicDetails"
+            app:argType="com.leencecodes.nifixiegari.models.Mechanic" />
+    </fragment>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.leencecodes.nifixiegari.dashboard.SearchFragment"
         android:label="fragment_search"
-        tools:layout="@layout/fragment_search" />
+        tools:layout="@layout/fragment_search" >
+        <action
+            android:id="@+id/action_searchFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
+    </fragment>
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.leencecodes.nifixiegari.dashboard.NotificationsFragment"
         android:label="fragment_notifications"
         tools:layout="@layout/fragment_notifications" />
+    <fragment
+        android:id="@+id/chatsFragment"
+        android:name="com.leencecodes.nifixiegari.dashboard.ChatsFragment"
+        android:label="fragment_chats"
+        tools:layout="@layout/fragment_chats" >
+        <action
+            android:id="@+id/action_chatsFragment_to_chatRoomFragment"
+            app:destination="@id/chatRoomFragment" />
+    </fragment>
 </navigation>
