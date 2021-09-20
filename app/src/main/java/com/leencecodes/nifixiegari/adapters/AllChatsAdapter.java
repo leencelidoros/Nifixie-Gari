@@ -24,8 +24,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.leencecodes.nifixiegari.R;
-import com.leencecodes.nifixiegari.dashboard.ChatsFragmentDirections;
-import com.leencecodes.nifixiegari.dashboard.SearchFragmentDirections;
+import com.leencecodes.nifixiegari.chat.ChatsFragmentDirections;
 import com.leencecodes.nifixiegari.models.Chat;
 import com.leencecodes.nifixiegari.models.Mechanic;
 
@@ -96,7 +95,6 @@ public class AllChatsAdapter extends FirebaseRecyclerAdapter<Chat, AllChatsAdapt
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
-
             }
         });
     }
