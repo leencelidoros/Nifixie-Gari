@@ -7,4 +7,11 @@
         <item>Ongoing Repairs</item>
         <item>Completed Repairs</item>
     </string-array>
+
+    <string-array name="accountType">
+        <item>Choose Account Type</item>
+        <item>User</item>
+        <item>Mechanic</item>
+    </string-array>
+
 </resources>

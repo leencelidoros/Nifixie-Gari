@@ -1,7 +1,11 @@
 package com.leencecodes.nifixiegari.dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
+
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
@@ -39,6 +43,31 @@ public class MainActivity extends AppCompatActivity {
 
         //Setup Navigation Drawer
         NavigationUI.setupWithNavController(mNavigationView, navController);
+
+
+        MenuItem share = mNavigationView.getMenu().findItem(R.id.shareFragment);
+        share.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+
+                Intent intent = new Intent(Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT,"My Doctor");
+                startActivity(Intent.createChooser(intent,"Choose One!"));
+                return true;
+            }
+        });
+
+        MenuItem feedback = mNavigationView.getMenu().findItem(R.id.feedbackFragment);
+        feedback.setOnMenuItemClickListener(item -> {
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/email");
+            intent.putExtra(Intent.EXTRA_EMAIL, new String[]{"leencelidonde00@gmail.com"});
+            intent.putExtra(Intent.EXTRA_SUBJECT, "Feedback");
+            intent.putExtra(Intent.EXTRA_TEXT,"there is an issue");
+            startActivity(Intent.createChooser(intent, "Send Feedback"));
+            return true;
+        });
 
     }
 

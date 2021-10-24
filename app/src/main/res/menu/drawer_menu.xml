@@ -2,8 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/settingsFragment"
-        android:icon="@drawable/ic_baseline_settings_24"
-        android:title="Settings"
-        app:showAsAction="ifRoom"/>
+    <item android:id="@+id/shareFragment"
+        android:title="Share" />
+
+    <item android:id="@+id/aboutUsFragment"
+        android:title="AboutUs" />
+
+    <item android:id="@+id/helpFragment2"
+        android:title="Help" />
+
+    <item android:id="@+id/feedbackFragment"
+        android:title="Feedback" />
+
 </menu>

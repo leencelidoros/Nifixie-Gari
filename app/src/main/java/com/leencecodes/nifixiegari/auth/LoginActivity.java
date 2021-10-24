@@ -29,6 +29,14 @@ public class LoginActivity extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
 
+        binding.textViewForgotPasword.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ForgotPasswordFragment resetFragment = new ForgotPasswordFragment();
+                resetFragment.show(getSupportFragmentManager(), "dialog_password_reset");
+            }
+        });
+
 
         binding.buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -54,6 +62,7 @@ public class LoginActivity extends AppCompatActivity {
                             if (firebaseAuth.getCurrentUser().isEmailVerified()) {
                                 Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                                 startActivity(intent);
+                                finish();
                                 Toast.makeText(LoginActivity.this, "welcome", Toast.LENGTH_LONG).show();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Verify your email first", Toast.LENGTH_LONG).show();

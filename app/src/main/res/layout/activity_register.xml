@@ -11,7 +11,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Create Account"
         android:textColor="@color/main_dark"
         android:textSize="30sp"
@@ -22,7 +22,7 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:text="Sign Up"
         android:textColor="@color/main_dark"
         android:textSize="24sp"
@@ -34,13 +34,13 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edittext_background"
-        android:hint="Email"
         android:drawableStart="@drawable/ic_emai"
-        android:drawableTint="@color/light_gray"
         android:drawablePadding="15dp"
+        android:drawableTint="@color/light_gray"
+        android:hint="Email"
         android:importantForAutofill="no"
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,7 +104,7 @@
         android:id="@+id/buttonCreateAccount"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="8dp"
         android:background="@color/yellow"
         android:text="Register"
         android:textAllCaps="false"
@@ -113,7 +113,7 @@
         app:cornerRadius="10dp"
         app:layout_constraintEnd_toEndOf="@+id/signUpRetypePasswordEditText"
         app:layout_constraintStart_toStartOf="@+id/signUpRetypePasswordEditText"
-        app:layout_constraintTop_toBottomOf="@+id/signUpRetypePasswordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/textViewHaveAccount"
@@ -137,5 +137,47 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/signUpRetypePasswordEditText">
+
+        <Spinner
+            android:id="@+id/accountType"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:entries="@array/accountType"
+            android:padding="15dp" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout1">
+
+        <Spinner
+            android:id="@+id/location"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="15dp" />
+    </RelativeLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

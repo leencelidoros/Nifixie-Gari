@@ -5,6 +5,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -52,6 +53,13 @@ public class HomeFragment extends Fragment {
         setHasOptionsMenu(true);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
+
+        binding.pay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Navigation.findNavController(v).navigate(R.id.action_homeFragment_to_paymentFragment);
+            }
+        });
 
         getFeaturedGarages();
         getFeaturedMechanics();

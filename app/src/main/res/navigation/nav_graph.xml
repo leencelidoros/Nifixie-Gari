@@ -8,13 +8,17 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.leencecodes.nifixiegari.dashboard.HomeFragment"
-        android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        android:label="Home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+    </fragment>
     <fragment
         android:id="@+id/chatRoomFragment"
         android:name="com.leencecodes.nifixiegari.chat.ChatRoomFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat_room" >
+        android:label="Chat Room"
+        tools:layout="@layout/fragment_chat_room">
         <argument
             android:name="mechanicDetails"
             app:argType="com.leencecodes.nifixiegari.models.Mechanic" />
@@ -22,8 +26,8 @@
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.leencecodes.nifixiegari.dashboard.SearchFragment"
-        android:label="fragment_search"
-        tools:layout="@layout/fragment_search" >
+        android:label="Search Nearby Mechanic"
+        tools:layout="@layout/fragment_search">
         <action
             android:id="@+id/action_searchFragment_to_chatRoomFragment"
             app:destination="@id/chatRoomFragment" />
@@ -31,15 +35,30 @@
     <fragment
         android:id="@+id/notificationsFragment"
         android:name="com.leencecodes.nifixiegari.dashboard.NotificationsFragment"
-        android:label="fragment_notifications"
+        android:label="Notifications"
         tools:layout="@layout/fragment_notifications" />
     <fragment
         android:id="@+id/chatsFragment"
         android:name="com.leencecodes.nifixiegari.chat.ChatsFragment"
-        android:label="fragment_chats"
-        tools:layout="@layout/fragment_chats" >
+        android:label="All Chats"
+        tools:layout="@layout/fragment_chats">
         <action
             android:id="@+id/action_chatsFragment_to_chatRoomFragment"
             app:destination="@id/chatRoomFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/helpFragment2"
+        android:name="com.leencecodes.nifixiegari.dashboard.HelpFragment"
+        android:label="Help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/aboutUsFragment"
+        android:name="com.leencecodes.nifixiegari.dashboard.AboutUsFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about_us" />
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.leencecodes.nifixiegari.dashboard.PaymentFragment"
+        android:label="Payment"
+        tools:layout="@layout/fragment_payment2" />
 </navigation>
