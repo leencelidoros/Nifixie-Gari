@@ -78,9 +78,9 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         firebaseUser = firebaseAuth.getCurrentUser();
 
                         User user = new User(binding.userFullName.getText().toString());
-                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString());
+                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString(),"falsee");
 
-                        databaseReference.child("mechanics").push().setValue(mechanic);
+                        databaseReference.child("mechanics").child(firebaseUser.getUid()).setValue(mechanic);
 
                         databaseReference.child("users").child(firebaseUser.getUid()).setValue(user);
 

@@ -44,7 +44,7 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
         holder.name.setText(mechanic.getMechanicName());
         holder.location.setText(mechanic.getMechanicLocation());
 
-        if (mechanic.getIsVerified().equals("isVerified")){
+        if (mechanic.getIsVerified().equals("truee")){
             holder.verification.setVisibility(View.VISIBLE);
         }
 

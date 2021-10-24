@@ -217,7 +217,10 @@ public class ChatRoomFragment extends Fragment {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (R.id.verify == item.getItemId()) {
-            databaseReference.child("users").child(mechanic.getUniqueUUID()).child("isVerified").setValue("true");
+
+
+
+            databaseReference.child("mechanics").child(mechanic.getUniqueUUID()).child("isVerified").setValue("truee");
             Toast.makeText(requireContext(), "Verify User", Toast.LENGTH_SHORT).show();
             return true;
         }
