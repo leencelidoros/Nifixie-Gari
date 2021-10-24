@@ -14,7 +14,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:justificationMode="inter_word"
-        android:text="fsfnsei dfgdrmbdfgdin xgsrin gs0g \n fgfgxfgdfggdxg \n xfdsfdsfsfsf"
+        android:text="FAQ \n\nWhat does the application entail?\n The application acts as a link between users(drivers) and mechanics incase of a breakdown.\n How can the app be set on a different platform?\n Samsung /n Go to settings\n Device management>battery>unmonitored app>add apps\n lenovo\n Background app management>Deselect the app."
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

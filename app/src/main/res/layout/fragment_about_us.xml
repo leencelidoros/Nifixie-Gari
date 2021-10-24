@@ -15,7 +15,7 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:justificationMode="inter_word"
-        android:text=" sfgskodnfi cgdio dfg9i cvdfgimxfxfg xgdfgsdgxsgggsg c vdfsdfs xdfdfsdgsfgsgsgvx"
+        android:text="\n NifixieGari app is a purpose driven platform focused on linking vehicle users with mecganics in terms of a breakdown\n \n A new world of technology enhancing a mechanic  being marketed and fixing drivers challenges.Our vision is to provide a complete ecosystem interaction among the users."
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
