@@ -4,27 +4,26 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:padding="10dp"
     android:layout_margin="10dp">
 
     <TextView
         android:id="@+id/messageTextView"
         android:layout_width="wrap_content"
-        android:maxWidth="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
+        android:layout_marginStart="8dp"
         android:padding="10dp"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@android:color/black"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         app:layout_constraintStart_toEndOf="@id/messengerImageView"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/messengerImageView"
         tools:text="This is a message" />
 
     <TextView
         android:id="@+id/messengerTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="10dp"
         android:textAppearance="?android:attr/textAppearanceSmall"
+        app:layout_constraintEnd_toStartOf="@+id/textViewTimeDate"
         app:layout_constraintStart_toStartOf="@id/messageTextView"
         app:layout_constraintTop_toBottomOf="@id/messageTextView"
         tools:text="John Doe" />
@@ -33,21 +32,20 @@
         android:id="@+id/messengerImageView"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginBottom="15dp"
         android:src="@drawable/ic_baseline_account_circle_24"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/messageTextView"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewTimeDate"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginTop="5dp"
+        android:textAlignment="textEnd"
         android:textSize="10sp"
-        android:text="18/09/2021 at 06:53AM"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/messengerTextView"
+        app:layout_constraintTop_toTopOf="@+id/messengerTextView"
+        tools:text="18/09/2021 at 06:53AM" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

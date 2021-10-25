@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'com.google.gms.google-services'
     id 'androidx.navigation.safeargs'
+    id 'kotlin-android'
 }
 
 android {
@@ -78,4 +79,7 @@ dependencies {
 
     // Circular ImagwView
     implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Kenyan Counties
+    implementation 'com.github.JoelKanyi:KenyanCounties:1.0.0'
 }

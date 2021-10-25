@@ -44,7 +44,11 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
         holder.name.setText(mechanic.getMechanicName());
         holder.location.setText(mechanic.getMechanicLocation());
 
-        holder.imageView.setOnClickListener(new View.OnClickListener() {
+        if (mechanic.getIsVerified().equals("truee")){
+            holder.verification.setVisibility(View.VISIBLE);
+        }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavDirections action = SearchFragmentDirections.actionSearchFragmentToChatRoomFragment(mechanic);
@@ -57,12 +61,14 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
         ImageView imageView;
         TextView name;
         TextView location;
+        ImageView verification;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.imageViewMech);
             name = itemView.findViewById(R.id.textViewMechName);
             location = itemView.findViewById(R.id.textViewMechLocation);
+            verification = itemView.findViewById(R.id.imageViewVerify);
         }
     }
 

@@ -1,5 +1,6 @@
 package com.leencecodes.nifixiegari.chat;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,9 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
@@ -25,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ServerValue;
 import com.google.firebase.database.ValueEventListener;
+import com.leencecodes.nifixiegari.R;
+import com.leencecodes.nifixiegari.auth.LoginActivity;
 import com.leencecodes.nifixiegari.observers.ButtonObserver;
 import com.leencecodes.nifixiegari.adapters.ChatsRecyclerAdapter;
 import com.leencecodes.nifixiegari.observers.ScrollToBottomObserver;
@@ -58,6 +64,8 @@ public class ChatRoomFragment extends Fragment {
                              Bundle savedInstanceState) {
         binding = FragmentChatRoomBinding.inflate(inflater, container, false);
         View view = binding.getRoot();
+
+        setHasOptionsMenu(true);
 
         mechanic = ChatRoomFragmentArgs.fromBundle(getArguments()).getMechanicDetails();
 
@@ -198,5 +206,24 @@ public class ChatRoomFragment extends Fragment {
         adapter.registerAdapterDataObserver(
                 new ScrollToBottomObserver(binding.messageRecyclerView, (ChatsRecyclerAdapter) adapter, manager)
         );
+    }
+
+    @Override
+    public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
+        super.onCreateOptionsMenu(menu, inflater);
+        inflater.inflate(R.menu.verify_menu, menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (R.id.verify == item.getItemId()) {
+
+
+
+            databaseReference.child("mechanics").child(mechanic.getUniqueUUID()).child("isVerified").setValue("truee");
+            Toast.makeText(requireContext(), "Verify User", Toast.LENGTH_SHORT).show();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

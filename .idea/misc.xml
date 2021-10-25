@@ -14,21 +14,34 @@
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/activity_splash.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/chat_row.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_about_us.xml" value="0.24583333333333332" />
         <entry key="app/src/main/res/layout/fragment_chat.xml" value="0.1685185185185185" />
         <entry key="app/src/main/res/layout/fragment_chat_room.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/fragment_chats.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_completed_repairs.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_forgot_password.xml" value="0.26145833333333335" />
+        <entry key="app/src/main/res/layout/fragment_help.xml" value="0.24583333333333332" />
+        <entry key="app/src/main/res/layout/fragment_hire.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
         <entry key="app/src/main/res/layout/fragment_notifications.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/fragment_on_going_repair.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_payment.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_rate_garage.xml" value="0.246875" />
+        <entry key="app/src/main/res/layout/fragment_rate_mechanic.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/layout/fragment_register_mechanic.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/fragment_upload_garage.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/garages_row.xml" value="0.25" />
         <entry key="app/src/main/res/layout/header.xml" value="0.1" />
         <entry key="app/src/main/res/layout/image_message.xml" value="0.26197916666666665" />
         <entry key="app/src/main/res/layout/mechanics_row.xml" value="0.13055555555555556" />
         <entry key="app/src/main/res/layout/message_row.xml" value="0.26197916666666665" />
-        <entry key="app/src/main/res/layout/single_mechanic_row.xml" value="0.13489583333333333" />
+        <entry key="app/src/main/res/layout/single_mechanic_row.xml" value="0.33" />
         <entry key="app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
-        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/drawer_menu.xml" value="0.25" />
         <entry key="app/src/main/res/menu/logout_menu.xml" value="0.26197916666666665" />
+        <entry key="app/src/main/res/menu/verify_menu.xml" value="0.26145833333333335" />
       </map>
     </option>
   </component>
