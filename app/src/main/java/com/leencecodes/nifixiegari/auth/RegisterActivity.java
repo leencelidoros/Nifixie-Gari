@@ -63,7 +63,15 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
             } else if (TextUtils.isEmpty(binding.signUpPasswordEditText.getText().toString())) {
                 binding.signUpPasswordEditText.setError("Field can't be empty!");
                 return;
-            } else if (binding.signUpPasswordEditText.length() < 6) {
+            }else if (TextUtils.isEmpty(binding.editTextPhone2.getText().toString())) {
+            binding.editTextPhone2.setError("Field can't be empty!");
+            return;
+            }
+            else if (binding.editTextPhone2.getText().toString().length() != 10) {
+            binding.editTextPhone2.setError("Incorrect length of phone number");
+            return;
+             }
+            else if (binding.signUpPasswordEditText.length() < 6) {
                 binding.signUpPasswordEditText.setError("Password should be 6 characters or more!");
             } else if (!isValidMail(binding.signUpEmailEditText.getText().toString())) {
                 binding.signUpEmailEditText.setError("Invalid Email!");
@@ -78,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         firebaseUser = firebaseAuth.getCurrentUser();
 
                         User user = new User(binding.userFullName.getText().toString());
-                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString(),"falsee");
+                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString(),"falsee",binding.editTextPhone2.getText().toString());
 
                         databaseReference.child("mechanics").child(firebaseUser.getUid()).setValue(mechanic);
 

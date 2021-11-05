@@ -86,7 +86,7 @@ public class AllChatsAdapter extends FirebaseRecyclerAdapter<Chat, AllChatsAdapt
                 holder.card.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Mechanic mechanic = new Mechanic(userName,"","",list_user_id,"","");
+                        Mechanic mechanic = new Mechanic(userName,"","",list_user_id,"","","");
                         NavDirections action = ChatsFragmentDirections.actionChatsFragmentToChatRoomFragment(mechanic);
                         Navigation.findNavController(v).navigate(action);
                     }
