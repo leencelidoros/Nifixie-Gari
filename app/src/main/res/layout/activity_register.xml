@@ -18,23 +18,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="Sign Up"
-        android:textColor="@color/main_dark"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
 
     <EditText
         android:id="@+id/signUpEmailEditText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
         android:background="@drawable/edittext_background"
         android:drawableStart="@drawable/ic_emai"
@@ -45,7 +35,7 @@
         android:inputType="textEmailAddress"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
         tools:ignore="LabelFor" />
 
     <EditText
@@ -148,7 +138,7 @@
         android:background="@drawable/spinner_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/signUpRetypePasswordEditText">
+        app:layout_constraintTop_toBottomOf="@+id/editTextPhone2">
 
         <Spinner
             android:id="@+id/accountType"
@@ -178,6 +168,22 @@
             android:layout_height="wrap_content"
             android:padding="15dp" />
     </RelativeLayout>
+
+    <EditText
+        android:id="@+id/editTextPhone2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:background="@drawable/edittext_background"
+        android:hint="Phone No."
+        android:inputType="phone"
+        android:drawableStart="@drawable/ic_phone"
+        android:drawableTint="@color/light_gray"
+        android:drawablePadding="15dp"
+        app:layout_constraintEnd_toEndOf="@+id/signUpRetypePasswordEditText"
+        app:layout_constraintStart_toStartOf="@+id/signUpRetypePasswordEditText"
+        app:layout_constraintTop_toBottomOf="@+id/signUpRetypePasswordEditText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

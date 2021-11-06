@@ -1,6 +1,7 @@
 package com.leencecodes.nifixiegari.chat;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -222,6 +223,24 @@ public class ChatRoomFragment extends Fragment {
 
             databaseReference.child("mechanics").child(mechanic.getUniqueUUID()).child("isVerified").setValue("truee");
             Toast.makeText(requireContext(), "Verify User", Toast.LENGTH_SHORT).show();
+            return true;
+        }else if (R.id.call_mech == item.getItemId()){
+/*            databaseReference.child("mechanics").child(mechanic.getUniqueUUID()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    String phone = snapshot.child("phoneNum").getValue(String.class);
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",phone,null));
+                    startActivity(intent);
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });*/
+
+            Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel",mechanic.getPhoneNum(),null));
+            startActivity(intent);
             return true;
         }
         return super.onOptionsItemSelected(item);
