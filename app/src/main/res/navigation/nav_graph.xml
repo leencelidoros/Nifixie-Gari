@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_homeFragment_to_paymentFragment"
             app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_garageDetailsFragment"
+            app:destination="@id/garageDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/chatRoomFragment"
@@ -61,4 +64,13 @@
         android:name="com.leencecodes.nifixiegari.dashboard.PaymentFragment"
         android:label="Payment"
         tools:layout="@layout/fragment_payment2" />
+    <fragment
+        android:id="@+id/garageDetailsFragment"
+        android:name="com.leencecodes.nifixiegari.dashboard.GarageDetailsFragment"
+        android:label="Garage Details"
+        tools:layout="@layout/fragment_garage_details">
+        <argument
+            android:name="garageDetails"
+            app:argType="com.leencecodes.nifixiegari.models.Garage" />
+    </fragment>
 </navigation>

@@ -10,14 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.NifixieGari">
         <activity
+            android:name=".dashboard.GarageDetailsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.SkillsActivity"
+            android:exported="false" />
+        <activity
             android:name=".auth.RegisterActivity"
-            android:exported="true" android:theme="@style/Theme.Splash"/>
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".dashboard.MainActivity"
             android:exported="true" />
         <activity
             android:name=".auth.LoginActivity"
-            android:exported="true" android:theme="@style/Theme.Splash"/>
+            android:exported="true"
+            android:theme="@style/Theme.Splash" />
         <activity
             android:name=".SplashActivity"
             android:exported="true"

@@ -86,7 +86,7 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                         firebaseUser = firebaseAuth.getCurrentUser();
 
                         User user = new User(binding.userFullName.getText().toString());
-                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString(),"falsee",binding.editTextPhone2.getText().toString());
+                        Mechanic mechanic = new Mechanic(binding.userFullName.getText().toString(),binding.location.getSelectedItem().toString(), "https://cdn3.iconfinder.com/data/icons/life-style-avatar-1/64/Mechanic-Avatar-Repairing-Wrench-Man-512.png",firebaseUser.getUid(),binding.accountType.getSelectedItem().toString(),"falsee",binding.editTextPhone2.getText().toString(),"");
 
                         databaseReference.child("mechanics").child(firebaseUser.getUid()).setValue(mechanic);
 
@@ -115,11 +115,18 @@ public class RegisterActivity extends AppCompatActivity implements AdapterView.O
                             }
                         });
 
-                        Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
-                        startActivity(intent);
-                        finish();
-                        Toast.makeText(RegisterActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
-                        binding.signUpProgressBar.setVisibility(View.INVISIBLE);
+                        Toast.makeText(getApplicationContext(), ""+binding.accountType.getSelectedItem().toString(), Toast.LENGTH_SHORT).show();
+
+                        if (binding.accountType.getSelectedItem().toString().equals("Mechanic")){
+                            Intent intent = new Intent(RegisterActivity.this, SkillsActivity.class).putExtra("NAME",binding.userFullName.getText().toString());
+                            startActivity(intent);
+                        }else{
+                            Intent intent = new Intent(RegisterActivity.this, LoginActivity.class);
+                            startActivity(intent);
+                            finish();
+                            Toast.makeText(RegisterActivity.this, "Welcome", Toast.LENGTH_SHORT).show();
+                            binding.signUpProgressBar.setVisibility(View.INVISIBLE);
+                        }
                     } else {
                         Toast.makeText(RegisterActivity.this, "" + task.getException(), Toast.LENGTH_LONG).show();
                         binding.signUpProgressBar.setVisibility(View.INVISIBLE);

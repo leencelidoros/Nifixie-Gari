@@ -43,6 +43,7 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
 
         holder.name.setText(mechanic.getMechanicName());
         holder.location.setText(mechanic.getMechanicLocation());
+        holder.skills.setText(mechanic.getSkills());
 
         if (mechanic.getIsVerified().equals("truee")){
             holder.verification.setVisibility(View.VISIBLE);
@@ -62,6 +63,7 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
         TextView name;
         TextView location;
         ImageView verification;
+        TextView skills;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -69,7 +71,7 @@ public class SearchMechanicsAdapter extends ListAdapter<Mechanic, SearchMechanic
             name = itemView.findViewById(R.id.textViewMechName);
             location = itemView.findViewById(R.id.textViewMechLocation);
             verification = itemView.findViewById(R.id.imageViewVerify);
+            skills = itemView.findViewById(R.id.textViewSkillsValue);
         }
     }
-
 }

@@ -9,10 +9,12 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -61,6 +63,28 @@ public class SearchFragment extends Fragment {
             }
         });
 
+        binding.searchCharacter.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                final int DRAWABLE_LEFT = 0;
+                final int DRAWABLE_TOP = 1;
+                final int DRAWABLE_RIGHT = 2;
+                final int DRAWABLE_BOTTOM = 3;
+
+                if(event.getAction() == MotionEvent.ACTION_UP) {
+                    if(event.getRawX() >= (binding.searchCharacter.getRight() - binding.searchCharacter.getCompoundDrawables()[DRAWABLE_RIGHT].getBounds().width())) {
+                        // your action here
+
+                        Snackbar.make(binding.getRoot(),"No Mechanic in that Location", Snackbar.LENGTH_LONG).show();
+                        Toast.makeText(getActivity().getApplicationContext(), "No Mechanic in that Location", Toast.LENGTH_LONG).show();
+
+                        return true;
+                    }
+                }
+                return false;
+            }
+        });
+
         return view;
     }
 
@@ -72,7 +96,12 @@ public class SearchFragment extends Fragment {
                 filteredlist.add(item);
             }
         }
-        mechanicsAdapter.submitList(filteredlist);
+        if (!filteredlist.isEmpty() || filteredlist != null){
+            mechanicsAdapter.submitList(filteredlist);
+        }else{
+            Snackbar.make(binding.getRoot(),"No Mechanic in that Location", Snackbar.LENGTH_LONG).show();
+            Toast.makeText(getActivity().getApplicationContext(), "No Mechanic in that Location", Toast.LENGTH_LONG).show();
+        }
     }
 
     private void getMechanics() {

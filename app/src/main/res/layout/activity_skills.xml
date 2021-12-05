@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".auth.SkillsActivity">
+
+    <TextView
+        android:id="@+id/textViewSkills"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Choose Mechanics Skills"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.chip.ChipGroup
+        android:id="@+id/chipGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSkills"
+        app:singleLine="false"
+        app:singleSelection="false">
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipDiesel"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Diesel" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipAutomotive"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="General Automotive" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBrake"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Brake and Transmission" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipBody"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Autobody" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipRace"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Race Car" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipService"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Service" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipGlass"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Autoglass" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipEngine"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Small Engine" />
+
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipTyre"
+            style="@style/Widget.MaterialComponents.Chip.Filter"            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:checkedIconEnabled="true"
+            android:text="Tyre" />
+    </com.google.android.material.chip.ChipGroup>
+
+    <Button
+        android:id="@+id/buttonSaveSkills"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout2" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:text="Choose Garage"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chipGroup" />
+
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/spinner_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6">
+
+        <Spinner
+            android:id="@+id/fgarage"
+            style="@style/Widget.AppCompat.DropDownItem.Spinner"
+            android:layout_width="match_parent"
+            android:entries="@array/garages"
+            android:layout_height="wrap_content"
+            android:padding="15dp" />
+    </RelativeLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

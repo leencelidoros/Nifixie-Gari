@@ -85,6 +85,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void getFeaturedGarages() {
+        garageArrayList.clear();
         databaseReference.child("featured_garages").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -108,6 +109,7 @@ public class HomeFragment extends Fragment {
     }
 
     private void getFeaturedMechanics() {
+        mechanicArrayList.clear();
         databaseReference.child("featured_mechanics").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
