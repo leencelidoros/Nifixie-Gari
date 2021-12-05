@@ -15,12 +15,14 @@ public class Mechanic implements Parcelable {
     String accountType;
     String isVerified;
     String phoneNum;
+    String skills;
+
 
 
     public Mechanic() {
     }
 
-    public Mechanic(String mechanicName, String mechanicLocation, String mechanicImageUrl, String uniqueUUID, String accountType, String isVerified, String phoneNum) {
+    public Mechanic(String mechanicName, String mechanicLocation, String mechanicImageUrl, String uniqueUUID, String accountType, String isVerified, String phoneNum, String skills) {
         this.mechanicName = mechanicName;
         this.mechanicLocation = mechanicLocation;
         this.mechanicImageUrl = mechanicImageUrl;
@@ -28,7 +30,9 @@ public class Mechanic implements Parcelable {
         this.accountType = accountType;
         this.isVerified = isVerified;
         this.phoneNum = phoneNum;
+        this.skills = skills;
     }
+
 
     public String getMechanicName() {
         return mechanicName;
@@ -86,7 +90,13 @@ public class Mechanic implements Parcelable {
         this.phoneNum = phoneNum;
     }
 
+    public String getSkills() {
+        return skills;
+    }
 
+    public void setSkills(String skills) {
+        this.skills = skills;
+    }
 
     public static DiffUtil.ItemCallback<Mechanic> itemCallback = new DiffUtil.ItemCallback<Mechanic>() {
         @Override
@@ -115,6 +125,7 @@ public class Mechanic implements Parcelable {
         dest.writeString(this.accountType);
         dest.writeString(this.isVerified);
         dest.writeString(this.phoneNum);
+        dest.writeString(this.skills);
     }
 
     public void readFromParcel(Parcel source) {
@@ -125,6 +136,7 @@ public class Mechanic implements Parcelable {
         this.accountType = source.readString();
         this.isVerified = source.readString();
         this.phoneNum = source.readString();
+        this.skills = source.readString();
     }
 
     protected Mechanic(Parcel in) {
@@ -135,6 +147,7 @@ public class Mechanic implements Parcelable {
         this.accountType = in.readString();
         this.isVerified = in.readString();
         this.phoneNum = in.readString();
+        this.skills = in.readString();
     }
 
     public static final Parcelable.Creator<Mechanic> CREATOR = new Parcelable.Creator<Mechanic>() {

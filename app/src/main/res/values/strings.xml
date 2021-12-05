@@ -14,4 +14,14 @@
         <item>Mechanic</item>
     </string-array>
 
+
+    <string-array name="garages">
+        <item>Kwa Maina Garage</item>
+        <item>Automotive Garage</item>
+        <item>Maish Garage</item>
+        <item>Solution Garage</item>
+        <item>Mabatini Garage</item>
+        <item>Bei Nafuu Garage</item>
+    </string-array>
+
 </resources>
